@@ -6,7 +6,7 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 17:35:58 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/23 18:11:48 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/23 21:15:29 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ t_list			*ft_lstmap(t_list *lst
 		, void *(*f)(void *), void (*del)(void *));
 int				ft_isspace(char c);
 void			stack_add_back(stack **alst, stack *new);
+void			stack_add_front(stack **alst, stack *new);
 stack			*stack_new(int d);
 stack			*stack_last(stack *lst);
 int				stack_size(stack *lst);

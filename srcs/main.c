@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:23:11 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/23 20:53:48 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/23 21:51:25 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	show_stack(stack *s, stack* s1)
 		while (b)
 		{
 			if (cb > ca)
-				printf("%4d\n", b->d);
+				printf("%5d\n", b->d);
 			else {
 				printf("%d%4d\n",a->d, b->d);
 				a = a->down;
@@ -112,6 +112,26 @@ int main(int argc, char **argv)
 
 	show_stack(a, b);
 	swap(a);
+	show_stack(a, b);
+	push(&a, &b);
+	show_stack(a, b);
+	push(&a, &b);
+	show_stack(a, b);
+	push(&a, &b);
+	show_stack(a, b);
+	rotate(a);
+	show_stack(a, b);
+	rotate(b);
+	show_stack(a, b);
+	reverse_rotate(a);
+	show_stack(a, b);
+	reverse_rotate(b);
+	show_stack(a, b);
+	push(&b, &a);
+	show_stack(a, b);
+	push(&b, &a);
+	show_stack(a, b);
+	push(&b, &a);
 	show_stack(a, b);
 
 	free_stack(a);

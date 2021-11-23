@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack_add_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:40:58 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/23 21:50:02 by pcariou          ###   ########.fr       */
+/*   Created: 2019/10/15 17:33:34 by pcariou           #+#    #+#             */
+/*   Updated: 2021/11/23 21:15:03 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-#include "../libft/libft.h"
-#include <stdio.h>
-
-void	swap(stack *s);
-void	push(stack **s, stack **s1);
-void	rotate(stack *s);
-void	reverse_rotate(stack *s);
-
-#endif
+void	stack_add_front(stack **alst, stack *new)
+{
+	new->up = *alst;
+	*alst = new;
+}
