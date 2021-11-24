@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:23:11 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/23 21:51:25 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/24 00:00:00 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ void	show_stack(stack *s, stack* s1)
 	printf("-   -\n");
 	printf("a   b\n");
 	printf("-----\n");
+//	(void)s;
+//	(void)s1;
 }
 
 int main(int argc, char **argv)
@@ -110,32 +112,33 @@ int main(int argc, char **argv)
 	}
 	a = fill_a(a, argv, argc - 1);
 
+	algorithm(a, b);
+	/*
+
 	show_stack(a, b);
-	swap(a);
+	swap(a, "sa\n");
 	show_stack(a, b);
-	push(&a, &b);
+	push(&a, &b, "pb\n");
 	show_stack(a, b);
-	push(&a, &b);
+	push(&a, &b, "pb\n");
 	show_stack(a, b);
-	push(&a, &b);
+	push(&a, &b, "pb\n");
 	show_stack(a, b);
-	rotate(a);
+	//rr(a, b);
+	//show_stack(a, b);
+	//rrr(a, b);
+	//show_stack(a, b);
+	swap(a, "sa\n");
 	show_stack(a, b);
-	rotate(b);
+	push(&b, &a, "pa\n");
 	show_stack(a, b);
-	reverse_rotate(a);
+	push(&b, &a, "pa\n");
 	show_stack(a, b);
-	reverse_rotate(b);
+	push(&b, &a, "pa\n");
 	show_stack(a, b);
-	push(&b, &a);
-	show_stack(a, b);
-	push(&b, &a);
-	show_stack(a, b);
-	push(&b, &a);
-	show_stack(a, b);
+	*/
 
 	free_stack(a);
 	free_stack(b);
-
 	return (0);
 }

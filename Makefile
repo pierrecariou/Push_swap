@@ -6,7 +6,7 @@
 #    By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 11:21:35 by pcariou           #+#    #+#              #
-#    Updated: 2021/11/23 16:09:50 by pcariou          ###   ########.fr        #
+#    Updated: 2021/11/24 00:02:29 by pcariou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME		= push_swap
 HEADER		= ./
 
 SRCS		=	srcs/main.c \
-				srcs/operations.c
+				srcs/operations.c \
+				srcs/algorithm.c
 
 OBJS		= $(SRCS:.c=.o)
 
