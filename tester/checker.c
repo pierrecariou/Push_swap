@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:23:11 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/24 16:18:17 by pcariou          ###   ########.fr       */
+/*   Created: 2021/11/24 16:30:55 by pcariou           #+#    #+#             */
+/*   Updated: 2021/11/24 17:21:47 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "checker.h"
 
 void	free_stack(stack *s)
 {
@@ -141,7 +141,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	algorithm(a, b);
+	execute(a, b);
 
 	free_stack(a);
 	free_stack(b);

@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:40:58 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/24 16:40:44 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/24 17:22:18 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../libft/libft.h"
+#include "libft/libft.h"
 #include <stdio.h>
 
 void	swap(stack *s, char *op);
@@ -27,5 +27,7 @@ void	algorithm(stack *a, stack *b);
 void	multiple_op(stack *s, char *op, int num, void(*f)(stack *s, char *op));
 
 void	show_stack(stack *a, stack *b);
+
+void	execute(stack *a, stack *b);
 
 #endif

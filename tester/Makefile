@@ -6,17 +6,17 @@
 #    By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 11:21:35 by pcariou           #+#    #+#              #
-#    Updated: 2021/11/24 17:03:33 by pcariou          ###   ########.fr        #
+#    Updated: 2021/11/24 17:21:30 by pcariou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= push_swap
+NAME		= checker
 
 HEADER		= ./
 
-SRCS		=	srcs/main.c \
-				srcs/operations.c \
-				srcs/algorithm.c
+SRCS		=	checker.c \
+				operations.c \
+				execute.c
 
 OBJS		= $(SRCS:.c=.o)
 
