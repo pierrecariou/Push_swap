@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:23:11 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/24 16:18:17 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/25 15:34:55 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,6 @@ int main(int argc, char **argv)
 	algorithm(a, b);
 
 	free_stack(a);
-	free_stack(b);
+	//free_stack(b);
 	return (0);
 }

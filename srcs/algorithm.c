@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 00:00:39 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/24 19:19:51 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/25 15:35:05 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,8 @@ void	algorithm(stack *a, stack *b)
 		sort_five(&a, &b);
 	else if (size > 5 && size <= 100)
 		sort_hundred(&a, &b);
+	//while (a->down)
+	//	a = a->down;
 	//show_stack(a, b);
-	return ;
+	//return (a);
 }

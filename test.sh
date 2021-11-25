@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAXCOUNT=10
+MAXCOUNT=90
 NC='\033[0m'
 
 one_test () {
@@ -10,7 +10,7 @@ one_test () {
 		number[$count]=$RANDOM
 		let "count += 1"
 	done
-	echo "TEST : $MAXCOUNT"
+	echo "TEST : $MAXCOUNT digits"
 	echo "------------------------"
 	nums=$( printf '%s ' "${number[@]}" )
 
@@ -22,7 +22,7 @@ one_test () {
 		exit $?
 	fi
 	echo -ne "${NC}"
-	echo -n "operations n: " ; ./push_swap $nums | wc -l
+	echo -n "op : " ; ./push_swap $nums | wc -l
 	echo "------------------------"
 }
 

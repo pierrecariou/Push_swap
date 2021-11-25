@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_add_front.c                                  :+:      :+:    :+:   */
+/*   stack_add_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 17:33:34 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/25 12:13:45 by pcariou          ###   ########.fr       */
+/*   Created: 2021/11/23 15:18:15 by pcariou           #+#    #+#             */
+/*   Updated: 2021/11/25 12:11:23 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	stack_add_front(stack **alst, stack *new)
+void	stack_add_back(stack **alst, stack *new)
 {
-	new->up = *alst;
-	(*alst)->down = new;
-	*alst = new;
+	stack *elem;
+
+	if (!new)
+		return ;
+	if (!alst || !*alst)
+	{
+		*alst = new;
+		return ;
+	}
+	elem = *alst;
+	while (elem->up)
+		elem = elem->up;
+	elem->up = new;
+	new->down = elem;
 }
