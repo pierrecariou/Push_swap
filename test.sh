@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAXCOUNT=90
+MAXCOUNT=470
 NC='\033[0m'
 
 one_test () {
@@ -26,7 +26,7 @@ one_test () {
 	echo "------------------------"
 }
 
-while [ "$MAXCOUNT" -le 100 ]; do
+while [ "$MAXCOUNT" -le 500 ]; do
 	one_test
 	let "MAXCOUNT += 1"
 done

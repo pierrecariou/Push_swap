@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:23:11 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/25 15:34:55 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/26 15:22:53 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@ int main(int argc, char **argv)
 {
 	stack *a = NULL;
 	stack *b = NULL;
+	stack *c = NULL;
+	stack *d = NULL;
 
 	if (argc == 1 || check_nums(argv) == -1)
 	{
@@ -134,6 +136,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	a = fill_a(a, argv, argc - 1);
+	c = fill_a(c, argv, argc - 1);
 	if (double_d(a))
 	{
 		free_stack(a);
@@ -141,9 +144,10 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	algorithm(a, b);
+	algorithm(a, b, c, d);
 
 	free_stack(a);
+	//free_stack(c);
 	//free_stack(b);
 	return (0);
 }

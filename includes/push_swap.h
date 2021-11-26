@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:40:58 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/25 15:34:49 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/26 01:25:24 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	rotate(stack *s, char *op);
 void	rr(stack *s, stack *s1);
 void	reverse_rotate(stack *s, char *op);
 void	rrr(stack *s, stack *s1);
-void	algorithm(stack *a, stack *b);
+void	algorithm(stack *a, stack *b, stack *c, stack *d);
 void	multiple_op(stack *s, char *op, int num, void(*f)(stack *s, char *op));
 
 void	show_stack(stack *a, stack *b);

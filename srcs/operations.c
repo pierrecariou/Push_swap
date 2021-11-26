@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:47:52 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/25 15:29:06 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/26 01:20:06 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	swap(stack *s, char *op)
 {
 	int size = stack_size(s);
 
-	write(1, op, 3);
+	write(1, op, ft_strlen(op));
 	if (size == 0 || size == 1)
 		return ;
 	stack *last = stack_last(s);
@@ -36,7 +36,7 @@ void	push(stack **s, stack **s1, char *op)
 {
 	int size = stack_size(*s);
 
-	write(1, op, 3);
+	write(1, op, ft_strlen(op));
 	if (size == 0)
 		return ;
 	stack *last = stack_last(*s);
@@ -69,7 +69,7 @@ void	rotate(stack *s, char *op)
 {
 	int size = stack_size(s);
 
-	write(1, op, 3);
+	write(1, op, ft_strlen(op));
 	if (size == 0 || size == 1)
 		return ;
 	stack *last = stack_last(s);
@@ -92,7 +92,7 @@ void	reverse_rotate(stack *s, char *op)
 {
 	int size = stack_size(s);
 
-	write(1, op, 4);
+	write(1, op, ft_strlen(op));
 	if (size == 0 || size == 1)
 		return ;
 	stack *first = s;
