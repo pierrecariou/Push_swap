@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:47:52 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/26 01:20:06 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/26 19:42:09 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,6 @@ void	push(stack **s, stack **s1, char *op)
 	stack *last1 = stack_last(*s1);
 	last1->up = last;
 	last->down = last1;
-	//stack_add_back(s1, stack_new(last->d));
-	//if (last->down)
-	//	last->down->up = 0;
-	//else{
-	//	*s = NULL;
-	//}
-	//free(last);
-	//if (size == 1)
-	//	*s = NULL;
 }
 
 

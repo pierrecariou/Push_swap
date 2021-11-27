@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 00:00:39 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/26 16:37:27 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/26 17:02:53 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,36 +282,27 @@ void	sort_medium(stack **a, stack **b, stack **c, stack **d)
 	i = 0;
 
 	sort_chunk(c, d);
-//	show_stack(*c, *d);
-/*
-	printf("STACK A_B\n");
-	show_stack(*a, *b);
-	printf("STACK C_D\n");
-	show_stack(*c, *d);
-	*/
-
-	//printf("%d\n", size_c);
-	while (i++ < 4){
+	while (i++ < 4)
 		pre_sort(a, b, d, size_c);
-		/*
-		printf("STACK A_B\n");
-		show_stack(*a, *b);
-		printf("STACK C_D\n");
-		show_stack(*c, *d);
-		*/
-	}
 	size_c = stack_size(*d);
-	//printf("size_c: %d\n", size_c);
 	pre_sort(a, b, d, size_c);	
-	/*
-	printf("STACK A_B\n");
-		show_stack(*a, *b);
-		printf("STACK C_D\n");
-		show_stack(*c, *d);
-		*/
 	refill_a(a, b);
-//printf("STACK A_B\n");
-//		show_stack(*a, *b);
+}
+
+void	sort_big(stack **a, stack **b, stack **c, stack **d)
+{
+	int i;
+	int size_c;
+
+	size_c = stack_size(*a) / 11;
+	i = 0;
+
+	sort_chunk(c, d);
+	while (i++ < 10)
+		pre_sort(a, b, d, size_c);
+	size_c = stack_size(*d);
+	pre_sort(a, b, d, size_c);	
+	refill_a(a, b);
 }
 
 void	sort_three(stack *a)
@@ -372,8 +363,8 @@ void	algorithm(stack *a, stack *b, stack *c, stack *d)
 		sort_five(&a, &b);
 	else if (size > 5 && size <= 50)
 		sort_small(&a, &b);
-	else if (size > 50 && size <= 500)
+	else if (size > 50 && size <= 100)
 		sort_medium(&a, &b, &c, &d);
-
-	//	show_stack(a, b);	
+	else if (size > 90)
+		sort_big(&a, &b, &c, &d);
 }
