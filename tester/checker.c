@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:30:55 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/24 17:21:47 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/01 12:02:17 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,40 @@ void	free_stack(stack *s)
 		free(s);
 		s = cp;
 	}
+}
+
+int             ft_atoi_max_int(const char *str, stack **a)
+{
+	int i;
+	int minus;
+	long num;
+
+	i = 0;
+	minus = 0;
+	num = 0;
+	while (str[i] == '\t' || str[i] == '\n' ||
+			str[i] == '\r' || str[i] == '\v' ||
+			str[i] == '\f' || str[i] == ' ')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			minus++;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		num *= 10;
+		num += (str[i] - '0');
+		i++;
+	}
+	(minus == 1) ? num *= -1 : num;
+	if (num > INT_MAX || num < INT_MIN) {
+		write(1, "Error\n", 6);
+		free_stack(*a);
+		exit(1);
+	}
+	return (num);
 }
 
 int	double_d(stack *s)
@@ -78,49 +112,8 @@ int check_nums(char **nums)
 stack	*fill_a(stack *a, char **nums, int i)
 {
 	while (i >= 1)
-		stack_add_back(&a, stack_new(ft_atoi(nums[i--])));
+		stack_add_back(&a, stack_new(ft_atoi_max_int(nums[i--], &a)));
 	return (a);
-}
-
-void	show_stack(stack *s, stack* s1)
-{
-	int ca = stack_size(s);
-	int cb = stack_size(s1);
-
-	stack *a = stack_last(s);
-	stack *b = stack_last(s1);
-	printf("-----\n");
-	if (ca >= cb)
-	{
-		while (a)
-		{
-			if (ca > cb)
-				printf("%d\n", a->d);
-			else {
-				printf("%d%4d\n",a->d, b->d);
-				b = b->down;
-			}
-			a = a->down;
-			ca--;
-		}
-	}
-	else
-	{
-		while (b)
-		{
-			if (cb > ca)
-				printf("%5d\n", b->d);
-			else {
-				printf("%d%4d\n",a->d, b->d);
-				a = a->down;
-			}
-			b = b->down;
-			cb--;
-		}
-	}
-	printf("-   -\n");
-	printf("a   b\n");
-	printf("-----\n");
 }
 
 int main(int argc, char **argv)

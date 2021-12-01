@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 00:00:39 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/26 17:02:53 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/28 00:43:32 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ int		contains(int d, stack *s, int size_c)
 	index = 0;
 	while (s && index < size_c)
 	{
-		//printf("d: %d\n", s->d);
 		if (d == s->d)
 			return (1);
 		s = s->up;
@@ -128,27 +127,6 @@ void	sort_small(stack **a, stack **b)
 	}
 	while (stack_size(*b) != 0)
 		push(b, a, "pa\n");
-	//test
-	/*
-
-	   push(a, b, "pb\n");
-	   while(stack_size(*a) != 0)
-	   {
-	//int temp_value = input_stack.top()
-	int tmp;
-
-	tmp = stack_last(*a)->d;
-	rotate(*a, "ra\n");
-	while(stack_size(*b) != 0 && stack_last(*b)->d > tmp)
-	push(b, a, "pa\n");
-	reverse_rotate(*a, "rra\n");
-	push(a, b, "pb\n");
-
-	//aux_stack.push(temp_value)
-	}
-	while (stack_size(*b) != 0)
-	push(b, a, "pa\n");
-	 */
 }
 
 void	sort_chunk(stack **c, stack **d)
@@ -174,18 +152,14 @@ void	del_one_chunk(int digit, stack **d)
 	cp = *d;
 	while (*d)
 	{
-
-		//printf("TEST %p %p %d %d\n", (*d)->down, (*d)->up, (*d)->d, digit);
 		if ((*d)->d == digit)
 		{
-			//printf("TEST %p %p\n", (*d)->down, (*d)->up);
 			cp_up = (*d)->up;
 			cp_down = (*d)->down;
 			free(*d);
 			if (cp_up != 0)
 				cp_up->down = cp_down;
 			if (cp_down != 0) {
-				//printf("TESTOINS\n");
 				cp_down->up = cp_up;
 				*d = cp;
 			}
@@ -233,12 +207,8 @@ void	pre_sort(stack **a, stack **b, stack **d, int size_c)
 
 	while (size_c > 0)
 	{
-
-	//printf("size_c: %d\n", size_c);
 		from_bottom = find_from_bottom(*a, *d, size_c);
 		from_up = find_from_up(*a, *d, size_c);
-		//printf("bottom = %d\n", from_bottom);
-		//printf("up     = %d\n", from_up);
 		if (from_bottom < from_up) {
 			delete_found(*a, d, from_bottom, 1);
 			multiple_op(*a, "rra\n", from_bottom, reverse_rotate);
@@ -248,16 +218,8 @@ void	pre_sort(stack **a, stack **b, stack **d, int size_c)
 			multiple_op(*a, "ra\n", from_up - 1, rotate);
 		}
 		push(a, b, "pb\n");
-		/*
-		cp = (*d)->up;
-		free(*d);
-		*d = cp;
-		if (cp)
-			(*d)->down = 0;
-			*/
 		size_c--;
 	}
-	(void)b;
 }
 
 void	refill_a(stack **a, stack **b)

@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:16:31 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/24 20:03:19 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/11/28 00:54:20 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	get_next_line(char **line)
 	int		ret;
 	int		i = 0;
 
-	*line = malloc(200000);
+	if (!(*line = malloc(200000)))
+		exit (1);
 	while ((ret = read(0, buf, 1)) && buf[0] != '\n')
 		line[0][i++] = buf[0];
 	line[0][i] = 0;

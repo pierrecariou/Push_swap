@@ -6,7 +6,7 @@
 #    By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 11:21:35 by pcariou           #+#    #+#              #
-#    Updated: 2021/11/24 22:18:14 by pcariou          ###   ########.fr        #
+#    Updated: 2021/11/28 00:44:44 by pcariou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CFLAGS		= -Wall -Wextra -Werror
 all:		$(NAME)
 
 .c.o:
-	clang -g $(CFLAGS) -c $< -o $(<:.c=.o) -I$(HEADER)
+	clang $(CFLAGS) -c $< -o $(<:.c=.o) -I$(HEADER)
 
 $(NAME):	$(OBJS)
 	cd libft && make

@@ -6,15 +6,15 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:40:58 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/24 17:22:18 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/01 12:02:59 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+#include <limits.h>
 #include "libft/libft.h"
-#include <stdio.h>
 
 void	swap(stack *s, char *op);
 void	ss(stack *s, stack *s1);

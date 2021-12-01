@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAXCOUNT=1
+MAXCOUNT=400
 NC='\033[0m'
 
 one_test () {
