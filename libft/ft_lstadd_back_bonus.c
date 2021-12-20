@@ -6,7 +6,7 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 17:40:44 by pcariou           #+#    #+#             */
-/*   Updated: 2019/10/21 15:32:15 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 19:57:51 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list *elem;
+	t_list	*elem;
 
 	if (!new)
 		return ;

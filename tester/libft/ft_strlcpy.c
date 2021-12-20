@@ -6,15 +6,15 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 17:15:52 by pcariou           #+#    #+#             */
-/*   Updated: 2019/10/28 16:14:17 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 19:54:42 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strncopy(char *dest, const char *src, unsigned int n)
+char	*ft_strncopy(char *dest, const char *src, unsigned int n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (src[i] && i < n)
@@ -26,7 +26,7 @@ char			*ft_strncopy(char *dest, const char *src, unsigned int n)
 	return (dest);
 }
 
-size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	if (dst == 0 || src == 0)
 		return (0);

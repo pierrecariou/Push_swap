@@ -6,11 +6,11 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:02:30 by pcariou           #+#    #+#             */
-/*   Updated: 2019/10/11 18:58:41 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:10:59 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);

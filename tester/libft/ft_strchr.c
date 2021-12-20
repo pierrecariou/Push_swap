@@ -6,14 +6,14 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 15:25:03 by pcariou           #+#    #+#             */
-/*   Updated: 2019/10/22 18:24:35 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:31:16 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	char*new_s;
+	int		i;
+	char	*new_s;
 
 	i = 0;
 	new_s = (char *)s;

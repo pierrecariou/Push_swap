@@ -6,7 +6,7 @@
 #    By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 11:21:35 by pcariou           #+#    #+#              #
-#    Updated: 2021/11/28 00:44:44 by pcariou          ###   ########.fr        #
+#    Updated: 2021/12/20 18:15:34 by pcariou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ HEADER		= ./
 
 SRCS		=	srcs/main.c \
 				srcs/operations.c \
-				srcs/algorithm.c
+				srcs/operations1.c \
+				srcs/algorithm.c \
+				srcs/algorithm1.c \
+				srcs/algorithm2.c \
+				srcs/algorithm3.c
 
 OBJS		= $(SRCS:.c=.o)
 

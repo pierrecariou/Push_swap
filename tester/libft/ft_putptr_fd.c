@@ -6,7 +6,7 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 12:25:10 by pcariou           #+#    #+#             */
-/*   Updated: 2019/11/01 12:27:07 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:31:49 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putptr_fd(void *s, int fd)
 		return ;
 	while (&s[i])
 	{
-		write(fd, &&s[i], 1);
+		write(fd, && s[i], 1);
 		i++;
 	}
 }

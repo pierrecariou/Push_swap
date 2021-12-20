@@ -6,7 +6,7 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 15:25:29 by pcariou           #+#    #+#             */
-/*   Updated: 2019/10/28 14:46:17 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:33:44 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long int num;
+	long int	num;
 
 	num = n;
 	if (num < 0)

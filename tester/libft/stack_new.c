@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:26:25 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/23 18:08:11 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:34:23 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ stack	*stack_new(int d)
 {
 	stack	*elem;
 
-	if (!(elem = malloc(sizeof(stack))))
+	elem = malloc(sizeof(stack));
+	if (!elem)
 		return (0);
 	elem->d = d;
 	elem->up = 0;

@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:10:30 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/23 18:10:54 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:22:38 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	stack_size(stack *lst)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (lst)

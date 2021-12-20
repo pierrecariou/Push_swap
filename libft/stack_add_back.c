@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:18:15 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/25 12:11:25 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:13:08 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	stack_add_back(stack **alst, stack *new)
 {
-	stack *elem;
+	stack	*elem;
 
 	if (!new)
 		return ;

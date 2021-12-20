@@ -6,13 +6,13 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:07:17 by pcariou           #+#    #+#             */
-/*   Updated: 2019/10/22 18:09:28 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:30:11 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*new_s1;

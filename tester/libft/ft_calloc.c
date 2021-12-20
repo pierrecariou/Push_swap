@@ -6,7 +6,7 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 13:52:55 by pcariou           #+#    #+#             */
-/*   Updated: 2019/10/22 18:03:44 by pcariou          ###   ########.fr       */
+/*   Updated: 2021/12/05 20:03:51 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	if (!(ptr = malloc(count * size)))
+	ptr = malloc(count * size);
+	if (!ptr)
 		return (0);
 	ft_bzero(ptr, count * size);
 	return (ptr);
