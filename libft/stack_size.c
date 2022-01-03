@@ -6,13 +6,13 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 18:10:30 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/05 20:22:38 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:10:33 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	stack_size(stack *lst)
+int	t_stack_size(t_stack *lst)
 {
 	int	count;
 

@@ -6,13 +6,13 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 18:10:26 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/20 18:12:39 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:13:05 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	min(stack *s)
+int	min(t_stack *s)
 {
 	int	d;
 	int	index;
@@ -22,7 +22,7 @@ int	min(stack *s)
 	d = s->d;
 	index = 1;
 	ret = 1;
-	size = stack_size(s);
+	size = t_stack_size(s);
 	while (s)
 	{
 		if (d > s->d)
@@ -36,7 +36,7 @@ int	min(stack *s)
 	return (size - ret);
 }
 
-int	max(stack *s)
+int	max(t_stack *s)
 {
 	int	d;
 	int	index;
@@ -46,7 +46,7 @@ int	max(stack *s)
 	d = s->d;
 	index = 1;
 	ret = 1;
-	size = stack_size(s);
+	size = t_stack_size(s);
 	while (s)
 	{
 		if (d < s->d)
@@ -60,7 +60,7 @@ int	max(stack *s)
 	return (size - ret);
 }
 
-int	contains(int d, stack *s, int size_c)
+int	contains(int d, t_stack *s, int size_c)
 {
 	int	index;
 
@@ -75,7 +75,7 @@ int	contains(int d, stack *s, int size_c)
 	return (0);
 }
 
-int	find_from_bottom(stack *s, stack *d, int size_c)
+int	find_from_bottom(t_stack *s, t_stack *d, int size_c)
 {
 	int	index;
 

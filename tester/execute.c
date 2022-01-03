@@ -6,7 +6,7 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:16:31 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/20 17:09:42 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 14:51:39 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	get_next_line(char **line)
 	return (ret);
 }
 
-int	sorted(stack *a)
+int	sorted(t_stack *a)
 {
 	while (a->up)
 	{
@@ -43,7 +43,7 @@ int	sorted(stack *a)
 	return (1);
 }
 
-void	exec_op(char *line, stack **a, stack **b)
+void	exec_op(char *line, t_stack **a, t_stack **b)
 {
 	if (!ft_strncmp(line, "sa\n", ft_strlen(line)))
 		swap(*a, "sa\n");
@@ -63,7 +63,7 @@ void	exec_op(char *line, stack **a, stack **b)
 		reverse_rotate(*b, "rrb\n");
 }
 
-void	check_result(stack *a)
+void	check_result(t_stack *a)
 {
 	if (sorted(a))
 	{
@@ -79,7 +79,7 @@ void	check_result(stack *a)
 	}
 }
 
-void	execute(stack *a, stack *b)
+void	execute(t_stack *a, t_stack *b)
 {
 	int		r;
 	char	*line;

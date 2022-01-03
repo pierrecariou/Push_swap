@@ -6,15 +6,15 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:30:55 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/20 17:00:13 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 14:51:09 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	free_stack(stack *s)
+void	free_t_stack(t_stack *s)
 {
-	stack	*cp;
+	t_stack	*cp;
 
 	cp = s;
 	while (cp)
@@ -25,46 +25,10 @@ void	free_stack(stack *s)
 	}
 }
 
-int	ft_atoi_max_int(const char *str, stack **a)
+int	double_d(t_stack *s)
 {
-	int		i;
-	int		minus;
-	long	num;
-
-	i = 0;
-	minus = 0;
-	num = 0;
-	while (str[i] == '\t' || str[i] == '\n'
-		|| str[i] == '\r' || str[i] == '\v'
-		|| str[i] == '\f' || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			minus++;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num *= 10;
-		num += (str[i] - '0');
-		i++;
-	}
-	if (minus == 1)
-		num *= -1;
-	if (num > INT_MAX || num < INT_MIN)
-	{
-		write(1, "Error\n", 6);
-		free_stack(*a);
-		exit(1);
-	}
-	return (num);
-}
-
-int	double_d(stack *s)
-{
-	stack	*cp;
-	stack	*reset;
+	t_stack	*cp;
+	t_stack	*reset;
 	int		find;
 
 	cp = s;
@@ -113,17 +77,17 @@ int	check_nums(char **nums)
 	return (0);
 }
 
-stack	*fill_a(stack *a, char **nums, int i)
+t_stack	*fill_a(t_stack *a, char **nums, int i)
 {
 	while (i >= 1)
-		stack_add_back(&a, stack_new(ft_atoi_max_int(nums[i--], &a)));
+		t_stack_add_back(&a, t_stack_new(ft_atoi_max_int(nums[i--], &a)));
 	return (a);
 }
 
 int	main(int argc, char **argv)
 {
-	stack	*a;
-	stack	*b;
+	t_stack	*a;
+	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
@@ -135,12 +99,12 @@ int	main(int argc, char **argv)
 	a = fill_a(a, argv, argc - 1);
 	if (double_d(a))
 	{
-		free_stack(a);
+		free_t_stack(a);
 		write(1, "Error\n", 6);
 		return (1);
 	}
 	execute(a, b);
-	free_stack(a);
-	free_stack(b);
+	free_t_stack(a);
+	free_t_stack(b);
 	return (0);
 }

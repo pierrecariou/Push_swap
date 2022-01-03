@@ -6,7 +6,7 @@
 #    By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 11:21:35 by pcariou           #+#    #+#              #
-#    Updated: 2021/11/24 17:21:30 by pcariou          ###   ########.fr        #
+#    Updated: 2022/01/03 15:06:43 by pcariou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ HEADER		= ./
 
 SRCS		=	checker.c \
 				operations.c \
+				operations1.c \
 				execute.c
 
 OBJS		= $(SRCS:.c=.o)

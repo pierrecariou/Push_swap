@@ -6,13 +6,13 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 17:33:34 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/25 12:13:45 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:10:10 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	stack_add_front(stack **alst, stack *new)
+void	t_stack_add_front(t_stack **alst, t_stack *new)
 {
 	new->up = *alst;
 	(*alst)->down = new;

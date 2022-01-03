@@ -6,15 +6,15 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 17:34:28 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/20 17:35:02 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:11:03 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_stack(stack *s)
+void	free_t_stack(t_stack *s)
 {
-	stack	*cp;
+	t_stack	*cp;
 
 	cp = s;
 	while (cp)

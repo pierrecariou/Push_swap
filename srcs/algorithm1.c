@@ -6,13 +6,13 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 18:10:14 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/20 18:11:37 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:12:53 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	delete_found(stack *a, stack **d, int index, int bottom)
+void	delete_found(t_stack *a, t_stack **d, int index, int bottom)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ void	delete_found(stack *a, stack **d, int index, int bottom)
 	}
 	else
 	{
-		a = stack_last(a);
+		a = t_stack_last(a);
 		while (a)
 		{
 			if (i == index)
@@ -40,7 +40,7 @@ void	delete_found(stack *a, stack **d, int index, int bottom)
 	}
 }
 
-void	pre_sort(stack **a, stack **b, stack **d, int size_c)
+void	pre_sort(t_stack **a, t_stack **b, t_stack **d, int size_c)
 {
 	int	from_bottom;
 	int	from_up;
@@ -64,44 +64,44 @@ void	pre_sort(stack **a, stack **b, stack **d, int size_c)
 	}
 }
 
-void	refill_a(stack **a, stack **b)
+void	refill_a(t_stack **a, t_stack **b)
 {
-	while (stack_size(*b) != 0)
+	while (t_stack_size(*b) != 0)
 	{
-		if (max(*b) <= stack_size(*b) / 2)
+		if (max(*b) <= t_stack_size(*b) / 2)
 			multiple_op(*b, "rb\n", max(*b), rotate);
 		else
-			multiple_op(*b, "rrb\n", stack_size(*b) - max(*b), reverse_rotate);
+			multiple_op(*b, "rrb\n", t_stack_size(*b) - max(*b), reverse_rotate);
 		push(b, a, "pa\n");
 	}
 }
 
-void	sort_medium(stack **a, stack **b, stack **c, stack **d)
+void	sort_medium(t_stack **a, t_stack **b, t_stack **c, t_stack **d)
 {
 	int	i;
 	int	size_c;
 
-	size_c = stack_size(*a) / 5;
+	size_c = t_stack_size(*a) / 5;
 	i = 0;
 	sort_chunk(c, d);
 	while (i++ < 4)
 		pre_sort(a, b, d, size_c);
-	size_c = stack_size(*d);
+	size_c = t_stack_size(*d);
 	pre_sort(a, b, d, size_c);
 	refill_a(a, b);
 }
 
-void	sort_big(stack **a, stack **b, stack **c, stack **d)
+void	sort_big(t_stack **a, t_stack **b, t_stack **c, t_stack **d)
 {
 	int	i;
 	int	size_c;
 
-	size_c = stack_size(*a) / 11;
+	size_c = t_stack_size(*a) / 11;
 	i = 0;
 	sort_chunk(c, d);
 	while (i++ < 10)
 		pre_sort(a, b, d, size_c);
-	size_c = stack_size(*d);
+	size_c = t_stack_size(*d);
 	pre_sort(a, b, d, size_c);
 	refill_a(a, b);
 }

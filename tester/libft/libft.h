@@ -6,7 +6,7 @@
 /*   By: pcariou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 17:35:58 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/05 20:29:19 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:15:26 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -22,12 +23,12 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-typedef struct s_stack
+typedef struct s_t_stack
 {
-	int				d;
-	struct s_stack	*up;
-	struct s_stack	*down;
-}	stack;
+	int					d;
+	struct s_t_stack	*up;
+	struct s_t_stack	*down;
+}	t_stack;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -64,10 +65,12 @@ void			ft_lstadd_back(t_list **alst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void*));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 int				ft_isspace(char c);
-void			stack_add_back(stack **alst, stack *new);
-void			stack_add_front(stack **alst, stack *new);
-stack			*stack_new(int d);
-stack			*stack_last(stack *lst);
-int				stack_size(stack *lst);
+void			t_stack_add_back(t_stack **alst, t_stack *new);
+void			t_stack_add_front(t_stack **alst, t_stack *new);
+t_stack			*t_stack_new(int d);
+t_stack			*t_stack_last(t_stack *lst);
+int				t_stack_size(t_stack *lst);
+int				ft_atoi_max_int(const char *str, t_stack **a);
+void			free_t_stack(t_stack *s);
 
 #endif

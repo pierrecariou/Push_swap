@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 18:00:51 by pcariou           #+#    #+#             */
-/*   Updated: 2022/01/03 15:15:50 by pcariou          ###   ########.fr       */
+/*   Created: 2022/01/03 15:05:39 by pcariou           #+#    #+#             */
+/*   Updated: 2022/01/03 15:06:09 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "checker.h"
 
 void	reverse_rotate(t_stack *s, char *op)
 {
@@ -38,8 +38,8 @@ void	rrr(t_stack *s, t_stack *s1)
 	reverse_rotate(s1, "rrb\n");
 }
 
-void	multiple_op(t_stack *s, char *op, int num,
-			void (*f)(t_stack *s, char *op))
+void	multiple_op(t_stack *s, char *op, int num
+			, void (*f)(t_stack *s, char *op))
 {
 	int	i;
 

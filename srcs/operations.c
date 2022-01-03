@@ -6,45 +6,45 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:47:52 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/20 18:01:29 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:13:38 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	swap(stack *s, char *op)
+void	swap(t_stack *s, char *op)
 {
 	int		size;
 	int		cp;
-	stack	*last;
+	t_stack	*last;
 
-	size = stack_size(s);
+	size = t_stack_size(s);
 	write(1, op, ft_strlen(op));
 	if (size == 0 || size == 1)
 		return ;
-	last = stack_last(s);
+	last = t_stack_last(s);
 	cp = last->down->d;
 	last->down->d = last->d;
 	last->d = cp;
 }
 
-void	ss(stack *s, stack *s1)
+void	ss(t_stack *s, t_stack *s1)
 {
 	swap(s, "sa\n");
 	swap(s1, "sb\n");
 }
 
-void	push(stack **s, stack **s1, char *op)
+void	push(t_stack **s, t_stack **s1, char *op)
 {
 	int		size;
-	stack	*last;
-	stack	*last1;
+	t_stack	*last;
+	t_stack	*last1;
 
-	size = stack_size(*s);
+	size = t_stack_size(*s);
 	write(1, op, ft_strlen(op));
 	if (size == 0)
 		return ;
-	last = stack_last(*s);
+	last = t_stack_last(*s);
 	if (last->down)
 		last->down->up = 0;
 	else
@@ -56,22 +56,22 @@ void	push(stack **s, stack **s1, char *op)
 		(*s1)->up = 0;
 		return ;
 	}
-	last1 = stack_last(*s1);
+	last1 = t_stack_last(*s1);
 	last1->up = last;
 	last->down = last1;
 }
 
-void	rotate(stack *s, char *op)
+void	rotate(t_stack *s, char *op)
 {
 	int		size;
 	int		front;
-	stack	*last;
+	t_stack	*last;
 
-	size = stack_size(s);
+	size = t_stack_size(s);
 	write(1, op, ft_strlen(op));
 	if (size == 0 || size == 1)
 		return ;
-	last = stack_last(s);
+	last = t_stack_last(s);
 	front = last->d;
 	while (last->down)
 	{
@@ -81,7 +81,7 @@ void	rotate(stack *s, char *op)
 	last->d = front;
 }
 
-void	rr(stack *s, stack *s1)
+void	rr(t_stack *s, t_stack *s1)
 {
 	rotate(s, "ra\n");
 	rotate(s1, "rb\n");

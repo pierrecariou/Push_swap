@@ -6,13 +6,13 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:56:04 by pcariou           #+#    #+#             */
-/*   Updated: 2021/11/23 15:56:36 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:10:18 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-stack	*stack_last(stack *lst)
+t_stack	*t_stack_last(t_stack *lst)
 {
 	if (!lst)
 		return (0);

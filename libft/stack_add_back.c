@@ -6,15 +6,15 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:18:15 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/05 20:13:08 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:10:03 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	stack_add_back(stack **alst, stack *new)
+void	t_stack_add_back(t_stack **alst, t_stack *new)
 {
-	stack	*elem;
+	t_stack	*elem;
 
 	if (!new)
 		return ;

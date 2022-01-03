@@ -6,26 +6,26 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 00:00:39 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/20 18:12:34 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:13:11 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_three(stack *a)
+void	sort_three(t_stack *a)
 {
-	if (stack_last(a)->down->d < stack_last(a)->d
-		&& stack_last(a)->down->d < a->d)
+	if (t_stack_last(a)->down->d < t_stack_last(a)->d
+		&& t_stack_last(a)->down->d < a->d)
 	{
-		if (stack_last(a)->d < a->d)
+		if (t_stack_last(a)->d < a->d)
 			swap(a, "sa\n");
 		else
 			rotate(a, "ra\n");
 	}
-	else if (stack_last(a)->down->d > stack_last(a)->d
-		&& stack_last(a)->down->d > a->d)
+	else if (t_stack_last(a)->down->d > t_stack_last(a)->d
+		&& t_stack_last(a)->down->d > a->d)
 	{
-		if (stack_last(a)->d < a->d)
+		if (t_stack_last(a)->d < a->d)
 		{
 			swap(a, "sa\n");
 			rotate(a, "ra\n");
@@ -33,41 +33,41 @@ void	sort_three(stack *a)
 		else
 			reverse_rotate(a, "rra\n");
 	}
-	else if (stack_last(a)->down->d < stack_last(a)->d)
+	else if (t_stack_last(a)->down->d < t_stack_last(a)->d)
 	{
 		swap(a, "sa\n");
 		reverse_rotate(a, "rra\n");
 	}
 }
 
-void	sort_five(stack **a, stack **b)
+void	sort_five(t_stack **a, t_stack **b)
 {
-	if (max(*a) <= stack_size(*a) / 2)
+	if (max(*a) <= t_stack_size(*a) / 2)
 		multiple_op(*a, "ra\n", max(*a), rotate);
 	else
-		multiple_op(*a, "rra\n", stack_size(*a) - max(*a), reverse_rotate);
+		multiple_op(*a, "rra\n", t_stack_size(*a) - max(*a), reverse_rotate);
 	push(a, b, "pb\n");
-	if (stack_size(*a) > 3)
+	if (t_stack_size(*a) > 3)
 	{
-		if (min(*a) <= stack_size(*a) / 2)
+		if (min(*a) <= t_stack_size(*a) / 2)
 			multiple_op(*a, "ra\n", min(*a), rotate);
 		else
-			multiple_op(*a, "rra\n", stack_size(*a) - min(*a), reverse_rotate);
+			multiple_op(*a, "rra\n", t_stack_size(*a) - min(*a), reverse_rotate);
 		push(a, b, "pb\n");
 	}
 	sort_three(*a);
 	push(b, a, "pa\n");
-	if (stack_size(*b) != 0)
+	if (t_stack_size(*b) != 0)
 		push(b, a, "pa\n");
 	rotate(*a, "ra\n");
 }
 
-void	algorithm(stack *a, stack *b, stack *c, stack *d)
+void	algorithm(t_stack *a, t_stack *b, t_stack *c, t_stack *d)
 {
 	int	size;
 
-	size = stack_size(a);
-	if (size == 2 && stack_last(a)->d > a->d)
+	size = t_stack_size(a);
+	if (size == 2 && t_stack_last(a)->d > a->d)
 		swap(a, "sa\n");
 	else if (size == 3)
 		sort_three(a);

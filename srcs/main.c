@@ -6,16 +6,16 @@
 /*   By: pcariou <pcariou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 11:23:11 by pcariou           #+#    #+#             */
-/*   Updated: 2021/12/20 17:44:07 by pcariou          ###   ########.fr       */
+/*   Updated: 2022/01/03 15:13:16 by pcariou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	double_d(stack *s)
+int	double_d(t_stack *s)
 {
-	stack	*cp;
-	stack	*reset;
+	t_stack	*cp;
+	t_stack	*reset;
 	int		find;
 
 	cp = s;
@@ -64,21 +64,21 @@ int	check_nums(char **nums)
 	return (0);
 }
 
-stack	*fill_a(stack *a, char **nums, int i)
+t_stack	*fill_a(t_stack *a, char **nums, int i)
 {
 	while (i >= 1)
-		stack_add_back(&a, stack_new(ft_atoi_max_int(nums[i--], &a)));
+		t_stack_add_back(&a, t_stack_new(ft_atoi_max_int(nums[i--], &a)));
 	return (a);
 }
 
 /*
-void	show_stack(stack *s, stack* s1)
+void	show_t_stack(t_stack *s, t_stack* s1)
 {
-	int ca = stack_size(s);
-	int cb = stack_size(s1);
+	int ca = t_stack_size(s);
+	int cb = t_stack_size(s1);
 
-	stack *a = stack_last(s);
-	stack *b = stack_last(s1);
+	t_stack *a = t_stack_last(s);
+	t_stack *b = t_stack_last(s1);
 	printf("-----\n");
 	if (ca >= cb)
 	{
@@ -114,7 +114,7 @@ void	show_stack(stack *s, stack* s1)
 }
 */
 
-void	init_stack(stack **a, stack **b, stack **c, stack **d)
+void	init_t_stack(t_stack **a, t_stack **b, t_stack **c, t_stack **d)
 {
 	*a = NULL;
 	*b = NULL;
@@ -124,12 +124,12 @@ void	init_stack(stack **a, stack **b, stack **c, stack **d)
 
 int	main(int argc, char **argv)
 {
-	stack	*a;
-	stack	*b;
-	stack	*c;
-	stack	*d;
+	t_stack	*a;
+	t_stack	*b;
+	t_stack	*c;
+	t_stack	*d;
 
-	init_stack(&a, &b, &c, &d);
+	init_t_stack(&a, &b, &c, &d);
 	if (argc == 1 || check_nums(argv) == -1)
 	{
 		write(1, "Error\n", 6);
@@ -139,12 +139,12 @@ int	main(int argc, char **argv)
 	c = fill_a(c, argv, argc - 1);
 	if (double_d(a))
 	{
-		free_stack(a);
+		free_t_stack(a);
 		write(1, "Error\n", 6);
 		return (1);
 	}
 	algorithm(a, b, c, d);
-	free_stack(a);
-	free_stack(c);
+	free_t_stack(a);
+	free_t_stack(c);
 	return (0);
 }
